@@ -1,0 +1,99 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ / Android Studio
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# Visual Studio Code
+.vscode/
+
+# Flutter / Dart / Pub
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.packages
+.flutter-plugins
+.flutter-plugins-dependencies
+.pub-cache/
+.pub/
+/build/
+**/build/
+/coverage/
+/test_cache/
+
+# Symbolication & Obfuscation
+app.*.symbols
+app.*.map.json
+
+# Android
+**/.gradle/
+**/.kotlin/
+**/.cxx/
+**/local.properties
+**/key.properties
+**/GeneratedPluginRegistrant.java
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# iOS & macOS
+**/DerivedData/
+**/Pods/
+**/.symlinks/
+**/xcuserdata/
+*.xcuserstate
+**/Flutter/ephemeral/
+**/Flutter/Generated.xcconfig
+**/Flutter/flutter_export_environment.sh
+**/Flutter/Flutter.framework
+**/Flutter/App.framework
+**/Runner/GeneratedPluginRegistrant.*
+**/GeneratedPluginRegistrant.swift
+
+# Linux & Windows Desktop
+**/flutter/ephemeral/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Environment files, Keystores & Credentials
+.env*
+!.env.example
+!**/.env.example
+**/credentials.json
+**/serviceAccountKey.json
+**/*service-account*.json
+*.jks
+*.keystore
+*.pem
+*.key
+*.p8
+*.p12
+*.pfx
+*.mobileprovision
+*.provisionprofile
+
+# Firebase local state & cache
+.firebase/
+*-debug.log
+
+# Operating System Files
+Thumbs.db
+Desktop.ini
+*.tmp
+*.bak

@@ -1,0 +1,38 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // 1. USERS COLLECTION
+    match /users/{uid} {
+      // Any logged-in user can search/read names; only the owner can edit their profile
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // 2. GROUPS COLLECTION
+    match /groups/{groupId} {
+      allow create: if request.auth != null;
+      allow read: if request.auth != null && request.auth.uid in resource.data.memberUids;
+      // Allow members (and invited users accepting an invite) to update group membership/shares
+      allow update: if request.auth != null;
+      // Only the creator can delete the group
+      allow delete: if request.auth != null && request.auth.uid == resource.data.creatorUid;
+    }
+
+    // 3. EXPENSES COLLECTION
+    match /expenses/{expenseId} {
+      allow create, read: if request.auth != null;
+      // Allow creator to delete/edit, or group members to record settlements
+      allow update, delete: if request.auth != null && request.auth.uid == resource.data.memberUid;
+    }
+
+    // 4. INVITATIONS COLLECTION
+    match /invitations/{inviteId} {
+      allow create, read: if request.auth != null;
+      allow update, delete: if request.auth != null && (
+        request.auth.uid == resource.data.inviterUid ||
+          request.auth.uid == resource.data.invitedUid
+      );
+    }
+  }
+}

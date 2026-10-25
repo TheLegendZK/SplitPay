@@ -1,0 +1,28 @@
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "splitpay-6ca66",
+          "appId": "1:183207378828:android:12c867fc8ed942a431e0a9",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "splitpay-6ca66",
+          "configurations": {
+            "android": "1:183207378828:android:12c867fc8ed942a431e0a9",
+            "ios": "1:183207378828:ios:dda4c126c228155231e0a9"
+          }
+        }
+      }
+    }
+  },
+  "firestore": {
+    "database": "(default)",
+    "location": "nam5",
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  }
+}
